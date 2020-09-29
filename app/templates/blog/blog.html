@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}MyBlog{% endblock %}
+{% block content %}
+
+    <div class="card shadow">
+        <div class="card-body">
+            <p>
+            <h1>{{ blog.titel }}</h1>
+            </p>
+            <p>
+            <h4>Kategorie: {{ blog.Kategorie.name }}</h4>
+            </p>
+            <p>
+                {{ blog.text }}
+            </p>
+            <button type="button" class="btn btn-danger" aria-label="Right Align">
+                <span class="glyphicon glyphicon-align-right" aria-hidden="true">Delete</span>
+            </button>
+
+            <a class="btn btn-primary" href="{{ url_for('blog.blog_update_get',id=blog.id) }}">Update</a>
+            <a class="btn btn-primary" href="{{ url_for('blog.index') }}">Back</a>
+        </div>
+    </div>
+{% endblock %}
+

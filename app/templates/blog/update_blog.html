@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}MyBlog{% endblock %}
+{% block content %}
+
+    <div class="card shadow">
+        <div class="card-body">
+            <form method="post" action="" role="form" novalidate>
+                {{ form.csrf }}
+                <div class="form-group">
+                    <label for="Blogtitel">{{ form.blogtitel.label.text }}</label>
+                    <input name="blogtitel" type="text" class="form-control" id="Blogtitel"
+                           value="{{ form.blogtitel.data }}">
+                </div>
+
+                <div class="form-group">
+                    <label for="Kategorie">{{ form.kategorie.label.text }}</label>
+                    <select class="form-control" id="kategorie" name="kategorie">
+                        {% for k in kategorie %}
+                            <option value="{{ k.id }}" {% if form.kategorie.data == k.id %} selected="selected" {% endif %}>{{ k.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Text">{{ form.text.label.text }}</label>
+                    <textarea name="text" type="text" class="form-control" id="Text">{{ form.text.data }}</textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Speichern</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

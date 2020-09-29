@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}MyBlog{% endblock %}
+{% block content %}
+
+    {% for item in items %}
+        <div class="card">
+            <h5 class="card-header">
+                <a href="{{ url_for('blog.entries', id=item.Kategorie.id) }}">{{ item.Kategorie.name }}
+                </a>
+            </h5>
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a href="{{ url_for('blog.blog_detail', id=item.id) }}">{{ item.titel }}
+                    </a>
+                </h5>
+                <a href="{{ url_for('blog.blog_detail', id=item.id) }}" class="btn btn-primary">{{ item.titel }}</a>
+
+            </div>
+        </div>
+    {% endfor %}
+
+
+
+{% endblock %}

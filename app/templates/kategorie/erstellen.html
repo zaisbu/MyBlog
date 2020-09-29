@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}MyBlog{% endblock %}
+{% block content %}
+
+    <div class="card shadow">
+        <div class="card-body">
+            <form method="post" action="" role="form" novalidate>
+                {{ form.csrf }}
+
+                <div class="form-group">
+                    <label for="Kategorie">{{ form.name.label.text }}</label>
+                    <input name="name" type="text" class="form-control" id="Kategorie" value="{{ form.name.data }}">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Speichern</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

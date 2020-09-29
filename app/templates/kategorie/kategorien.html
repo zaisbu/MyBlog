@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}MyBlog{% endblock %}
+{% block content %}
+
+
+    <div class="card shadow">
+        <div class="card-body">
+            <ul class="list-group">
+                {% for item in items %}
+                    <a href="{{ url_for('blog.kategorie', id=item.id) }}"> <li class="list-group-item">{{ item.name }}</li></a>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+        <div class="card shadow">
+        <div class="card-body">
+            <p>
+                {{ kategorie.titel }}
+            </p>
+            <a class="btn btn-danger" href="{{ url_for('kategorie.remove',id=kategorie.id) }}">Remove</a>
+            <a class="btn btn-primary" href="{{ url_for('kategorie.update_get',id=kategorie.id) }}">Update</a>
+            <a class="btn btn-primary" href="{{ url_for('kategorie.index') }}">Back</a>
+        </div>
+    </div>
+
+{% endblock %}
