@@ -13,12 +13,9 @@
             <p>
                 {{ blog.text }}
             </p>
-            <button type="button" class="btn btn-danger" aria-label="Right Align">
-                <span class="glyphicon glyphicon-align-right" aria-hidden="true">Delete</span>
-            </button>
-
+            <a class="btn btn-danger" href="{{ url_for('blog.blog_remove',id=item.id) }}">Remove</a>
             <a class="btn btn-primary" href="{{ url_for('blog.blog_update_get',id=blog.id) }}">Update</a>
-            <a class="btn btn-primary" href="{{ url_for('blog.index') }}">Back</a>
+            <a class="btn btn-primary" href="{{ url_for('blog.blogs') }}">Back</a>
         </div>
     </div>
 {% endblock %}

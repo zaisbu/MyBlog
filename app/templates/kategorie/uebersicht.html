@@ -2,12 +2,15 @@
 {% block title %}MyBlog{% endblock %}
 {% block content %}
 
-{% for item in items %}
+    {% for item in items %}
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">
-                    <a href="{{ url_for('blog.entries', id=item.id) }}">{{ item.name }} - {{item.blog|length}}
+                    <a href="{{ url_for('blog.entries', id=item.id) }}">{{ item.name }} - {{ item.blog|length }}
                     </a>
+                    <a class="btn btn-danger" href="{{ url_for('kategorie.kategorie_remove',id=item.id) }}">Remove</a>
+                    <a class="btn btn-primary" href="{{ url_for('kategorie.kategorie_update_get',id=item.id) }}">Update</a>
+                    <a class="btn btn-primary" href="{{ url_for('kategorie.kategorie') }}">Back</a>
             </div>
         </div>
     {% endfor %}

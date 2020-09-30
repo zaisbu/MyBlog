@@ -8,10 +8,10 @@
                 {{ form.csrf }}
 
                 <div class="form-group">
-                    <label for="Kategorie">{{ form.kategorie.label.text }}</label>
-                    <input name="kategorie" type="text" class="form-control" id="Kategorie" value="{{ form.kategorie.data }}">
+                    <label for="Kategorie">{{ form.name.label.text }}</label>
+                    <input name="kategorie" type="text" class="form-control" id="Kategorie"
+                           value="{{ form.name.data }}">
                 </div>
-
                 <button type="submit" class="btn btn-primary">Speichern</button>
             </form>
         </div>

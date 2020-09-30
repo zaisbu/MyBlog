@@ -7,7 +7,6 @@ from app.blog import bp
 from app.blog.form import Blogform
 from app.models import Blog, Kategorie
 
-app.secret_key = "huerefuck"
 
 @bp.route('/')
 def index():
